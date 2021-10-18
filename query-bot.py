@@ -1,4 +1,3 @@
-
 import nltk
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -15,13 +14,15 @@ sent_tokens = nltk.sent_tokenize(raw)
 word_tokens = nltk.word_tokenize(raw)
 
 lemmer = nltk.stem.WordNetLemmatizer()
+remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
 
 def LemTokens(tokens):
     return [lemmer.lemmatize(token) for token in tokens]
-remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
+
 
 def LemNormalize(text):
     return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))
+
 
 def response(user_response):
     robot_response=''
@@ -40,30 +41,37 @@ def response(user_response):
         robot_response = robot_response+sent_tokens[idx]
         return robot_response
 
+
 GREETING_INPUTS = ("namastey","namaskaram","hello", "hi", "whats up","hey")
 GREETING_RESPONSES = ["namastey","namaskaram","hello", "hi", "whats up","hey"]
+
 def greeting(sentence):
- 
     for word in sentence.split():
         if word.lower() in GREETING_INPUTS:
             return random.choice(GREETING_RESPONSES)
 
-flag=True
-print("EduBot: Hello I am Edulper Bot. I am here to help you with the application. Ask away any doubts!")
-while(flag==True):
-    user_response = input()
-    user_response=user_response.lower()
-    if(user_response!='bye!!'):
-        if(user_response=='thanks' or user_response=='thank you' ):
-            flag=False
-            print("EduBot: Anytime")
-        else:
-            if(greeting(user_response)!=None):
-                print("EduBot: "+greeting(user_response))
+
+def main() :
+    flag=True
+    print("EduBot: Hello I am Edulper Bot. I am here to help you with the application. Ask away any doubts!")
+
+    while(flag==True):
+        user_response = input()
+        user_response=user_response.lower()
+        if(user_response!='bye!!'):
+            if(user_response=='thanks' or user_response=='thank you' ):
+                flag=False
+                print("EduBot: Anytime")
             else:
-                print("EduBot: ",end="")
-                print(response(user_response))
-                sent_tokens.remove(user_response)
-    else:
-        flag=False
-        print("EduBot: take care..")
+                if(greeting(user_response)!=None):
+                    print("EduBot: "+greeting(user_response))
+                else:
+                    print("EduBot: ",end="")
+                    print(response(user_response))
+                    sent_tokens.remove(user_response)
+        else:
+            flag=False
+            print("EduBot: take care..")
+
+if __name__=="__main__":
+    main()

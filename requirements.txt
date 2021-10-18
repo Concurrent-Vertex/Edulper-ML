@@ -5,3 +5,7 @@ gtts==2.2.3
 transformers==4.11.3 
 torch==1.9.1
 sentencepiece==0.1.96
+nltk==3.6.5
+scikit-learn==1.0
+strings==0.1.2
+random2==1.0.1

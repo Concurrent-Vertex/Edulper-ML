@@ -2,3 +2,6 @@ SpeechRecognition==3.8.1
 click==8.0.3 
 colorama==0.4.4 
 gtts==2.2.3
+transformers==4.11.3 
+torch==1.9.1
+sentencepiece==0.1.96

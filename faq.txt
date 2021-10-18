@@ -1,0 +1,9 @@
+In a nutshell, speech to text software, or automatic speech recognition (ASR) software, or voice to text software, is a computer program that uses linguistic algorithms to sort auditory signals and transform that information into words using Unicode characters.
+
+Text-to-speech (TTS) is a type of assistive technology that reads digital text aloud. It's sometimes called “read aloud” technology. With a click of a button or the touch of a finger, TTS can take words on a computer or other digital device and convert them into audio.
+
+Text Summarization is one of those applications of Natural Language Processing (NLP) which is bound to have a huge impact on our lives. ... It is a process of generating a concise and meaningful summary of text from multiple text resources such as books, news articles, blog posts, research papers, emails, and tweets.
+
+A chatbot is a program designed to engage people in a natural-language dialogue, either through typed text or voice. In general, chatbots provide both more and less than a natural-language search interface: more in that chatbots are expected to engage users in extended conversations (not just search), but less in that they usually support only a small set of tasks.
+
+Web scraping is the process of collecting structured web data in an automated fashion. It's also called web data extraction. Some of the main use cases of web scraping include price monitoring, price intelligence, news monitoring, lead generation, and market research among many others.

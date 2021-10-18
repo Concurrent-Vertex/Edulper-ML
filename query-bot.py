@@ -15,6 +15,8 @@ word_tokens = nltk.word_tokenize(raw)
 
 lemmer = nltk.stem.WordNetLemmatizer()
 remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
+GREETING_INPUTS = ("namastey","namaskaram","hello", "hi", "whats up","hey")
+GREETING_RESPONSES = ["namastey","namaskaram","hello", "hi", "whats up","hey"]
 
 def LemTokens(tokens):
     return [lemmer.lemmatize(token) for token in tokens]
@@ -41,9 +43,6 @@ def response(user_response):
         robot_response = robot_response+sent_tokens[idx]
         return robot_response
 
-
-GREETING_INPUTS = ("namastey","namaskaram","hello", "hi", "whats up","hey")
-GREETING_RESPONSES = ["namastey","namaskaram","hello", "hi", "whats up","hey"]
 
 def greeting(sentence):
     for word in sentence.split():
